@@ -7,7 +7,16 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
 
-  %body
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1"}
 
-  = yield
+  %body
+    .container
+      .row
+        .col.s12
+          %nav
+            .nav-wrapper
+              = link_to "Howlr", root_path, class: "brand-logo center"
+
+    .container
+      = yield
 
