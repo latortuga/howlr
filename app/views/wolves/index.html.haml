@@ -1,2 +1,22 @@
-%h1 Wolves#index
-%p Find me in app/views/wolves/index.html.haml
+%h2.center
+  You have
+  = pluralize @wolves.count, 'wolf'
+  in your pack
+
+.row
+  .col.s12
+    .collection
+      - @wolves.each do |wolf|
+        .collection-item
+          .row
+            .col.s2
+              = image_tag wolf.picture_url, class: 'responsive-img circle'
+            .col.s10
+              .row
+                .col.s8
+                  %h5= wolf.name
+                .col.s4
+                  .right= pluralize wolf.howl_count, 'howl'
+              .row
+                .col.s12
+                  = wolf.bio

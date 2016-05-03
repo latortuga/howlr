@@ -1,5 +1,6 @@
 class WolvesController < ApplicationController
   def index
+    @wolves = Wolf.all
   end
 
   def new

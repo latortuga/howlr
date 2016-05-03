@@ -10,4 +10,10 @@ class WolfTest < ActiveSupport::TestCase
     refute wolf.valid?
     assert_includes wolf.errors[:picture_url], "You need a profile picture URL"
   end
+
+  test 'howl_count' do
+    wolf = Wolf.new
+
+    assert_equal 0, wolf.howl_count
+  end
 end
