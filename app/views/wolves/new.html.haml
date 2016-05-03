@@ -1,0 +1,26 @@
+= form_for @wolf, html: {class: 'col s12'} do |f|
+
+  - if f.object.errors.any?
+    .row
+      .col.s10.push-s1
+        .card
+          .card-content
+            - f.object.errors.each do |field, message|
+              = message
+
+
+  .input-field.col.s12
+    = f.text_field :name
+    = f.label :name, "Your name?"
+
+  .input-field.col.s12
+    = f.text_field :picture_url
+    = f.label :picture_url, "Profile Picture URL?"
+
+  .input-field.col.s12
+    = f.text_field :bio
+    = f.label :bio, "Short bio?"
+
+  .input-field.col.12
+    = f.submit 'Join the Pack', class: 'btn btn-large red darken-2 right'
+    = link_to "Back", wolves_path, class: 'btn red lighten-2'
