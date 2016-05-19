@@ -1,6 +1,6 @@
 %h2.center
   You have
-  = pluralize @wolves.count, 'wolf'
+  = pluralize @howls.count, 'howls'
   in your pack
 
 .row
@@ -20,6 +20,3 @@
               .row
                 .col.s12
                   = wolf.bio
-              .row
-                .col.s12
-                  = distance_of_time_in_words_to_now wolf.created_at

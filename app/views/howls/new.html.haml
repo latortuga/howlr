@@ -1,0 +1,25 @@
+= form_for @howl, html: {class: 'col s12'} do |f|
+
+  - if f.object.errors.any?
+    .row
+      .col.s10.push-s1
+        .card
+          .card-content
+            - f.object.errors.each do |field, message|
+              = message
+
+
+  .input-field.col.s12
+    = f.text_field :content
+    = f.label :content, "Your name?"
+
+  .input-field.col.s12
+    = f.text_field :picture_url
+    = f.label :picture_url, "Profile Picture URL?"
+
+  .input-field.col.s12
+    = f.select :wolf_id, wolves_options, include_blank: "Who's howling?"
+
+  .input-field.col.12
+    = f.submit 'Bark at the moon', class: 'btn btn-large red darken-2 right'
+    = link_to "Back", howls_path, class: 'btn red lighten-2'
